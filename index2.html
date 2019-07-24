@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body>
+	
+	<div class="container">
+	       <div id="Christmas-buttons">
+	
+	       </div>
+	
+	       <br>
+	       <form id="Christmas-form">
+	              <label for="Christmas-input">Add some Christmas joy to your life!</label>
+	              <input type="text" id="Christmas-input"><br>
+	              <input id="additional" type="submit" value="Submit">
+	       </form>
+	       
+           <br>
+        </head>
+	
+	       <div id="Christmas-gif">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <script type="text/javascript">
+              
+                  $("#christmas-button").on("click", function() {
+              
+                   var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&tag=christmas";
+              
+                      $.ajax({
+                      url: queryURL,
+                      method: "GET"
+                    })
+              
+                      .then(function(response) {
+              
+          var imageUrl = response.data.image_original_url;
+          	
+	var christmas = ["eggnog", "snow", "santa clause", " apple cider", "christmas tree", 
+	                           "christmas songs",]
+	
+	
+	
+	function buttonMaker() {
+	
+	       $("#christmas-buttons").empty();
+	
+	       for (var i = 0; i < christmas.length; i++) {
+	              $("#christmas-buttons").append("<button type=button class='christmas-button btn btn-primary'>" + christmas [i] + "</button>");
+	       };
+	
+	
+	};
+	
+	
+	buttonMaker();
+
+        
+	   
+</body>
+</html>
